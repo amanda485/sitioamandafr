@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portafolio Imagen Escrita</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+</head>
+<body>
+  <!-- Encabezado superior con menú -->
+<header>
+  <div class="container">
+    <div class="logo">Portafolio Imagen Escrita</div>
+    <nav>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+
+</header>
+
+<!-- Sketch animado -->
+<div id="hero-p5"></div>
+
+
+
+  <section class="intro">
+  <p>
+    Imagen escrita es una asignatura que se centra en la intersección entre diseño, la programación y arte generativo. Utilizando p5.js como herramienta principal, el curso explora los fundamentos de la programación creativa y su aplicación en el diseño visual interactivo.
+  </p>
+  <p>
+    A través del creative coding se hace énfasis en el pensamiento computacional como herramienta de diseño, fomentando un enfoque innovador en la resolución de problemas visuales y la creación artística. La integración de herramientas de IA busca ampliar las posibilidades creativas y técnicas, sirviendo como complemento al proceso de diseño y programación.
+  </p>
+</section>
+
+<main>
+  <!-- Título de presentación de proyectos -->
+  <section class="titulo-proyectos">
+    <h2>Arte generativo P5JS</h2>
+    <p>Encargos realizados dentro del curso de Imagen Escrita.</p>
+  </section>
+
+  <main>
+    <!-- Proyectos -->
+    <section id="proyectos" class="proyectos">
+      <div class="card proyecto1">
+        <h2>Encargo 1</h2>
+        <p>Álbum CINEMA</p>
+        <a href="https://editor.p5js.org/amanda.fernandez.r/sketches/Uir1aP7Dq">Ver más</a>
+      </div>
+
+      <div class="card proyecto2">
+        <h2>Encargo 2</h2>
+        <p>Loop/Condicionales</p>
+        <a href="https://editor.p5js.org/amanda.fernandez.r/sketches/B7CrD9vnv">Ver más</a>
+      </div>
+
+      <div class="card proyecto3">
+        <h2>Encargo 3</h2>
+        <p>Transformaciones</p>
+        <a href="https://editor.p5js.org/amanda.fernandez.r/sketches/yXFf3Flr5">Ver más</a>
+      </div>
+
+      <div class="card proyecto4">
+        <h2>Encargo 4</h2>
+        <p>Patrón recursivo</p>
+        <a href="https://editor.p5js.org/amanda.fernandez.r/sketches/WpeEqLPLL">Ver más</a>
+      </div>
+    </section>
+
+    <!-- Sección de contacto -->
+   <section id="contacto" class="contacto">
+  <h2>Contacto</h2>
+  <p> <a href="mailto:amanda.fernandez.r@mail.pucv.cl">amanda.fernandez.r@mail.pucv.cl</a></p>
+
+  <a href="https://wiki.ead.pucv.cl/Imagen_Escrita_2025" class="boton-final">Wiki</a>
+</section>
+    </section>
+  </main>
+
+  <!-- Scroll suave con JS -->
+  <script>
+    const links = document.querySelectorAll('nav a');
+    for (const link of links) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  </script>
+ <!-- Sketch p5.js -->
+  <script>
+    let balls = []; 
+    let palette = [
+      [163, 9, 184, 150],   // morado intenso
+      [221, 160, 221, 150], // lila
+      [255, 182, 193, 150], // rosado claro
+      [199, 21, 133, 150],  // rosa fuerte
+      [218, 112, 214, 150]  // violeta rosado
+    ];
+
+    function setup() {
+      let canvas = createCanvas(window.innerWidth, 400);
+      canvas.parent('hero-p5');
+      angleMode(DEGREES);
+      noStroke();
+    }
+
+    function draw() {
+      background("#540E23"); // fondo oscuro burdeos
+      translate(width/2, height/2);
+
+      if (frameCount % 30 === 0) {
+        balls.push({
+          x: random(-150, 150),
+          y: random(-150, 150),
+          size: random(20, 60),
+          speed: random(-2, 2),
+          angle: random(360),
+          color: random(palette)
+        });
+      }
+
+      for (let b of balls) {
+        push();
+        b.angle += b.speed; 
+        rotate(b.angle);    
+        fill(b.color); 
+        circle(b.x, b.y, b.size);
+        pop();
+      }
+
+      if (balls.length > 200) {
+        balls.shift();
+      }
+    }
+
+    function windowResized() {
+      resizeCanvas(window.innerWidth, 400);
+    }
+  </script>
+</body>
+</html>
+
+</body>
+</html>

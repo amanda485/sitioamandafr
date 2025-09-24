@@ -1,0 +1,160 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #efccd5;
+  padding-top: 80px; /* espacio para el header fijo */
+  scroll-behavior: smooth; /* scroll suave */
+}
+
+/* Barra superior fija */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #8f004a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px; /* aumentamos el padding horizontal */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+header .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #ffdd57;
+}
+
+/* Contenedor de proyectos */
+.proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Tarjeta individual */
+.card {
+  width: 250px;
+  height: 300px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen de fondo de cada proyecto */
+.card.proyecto1 { background-image: url("assets/img/miImagenEstatica.png"); }
+.card.proyecto2 { background-image: url("assets/img/miImagenEstatica (2).png"); }
+.card.proyecto3 { background-image: url("assets/img/miImagenEstatica (1).png"); }
+.card.proyecto4 { background-image: url("assets/img/miImagenEstatica (3).png"); }
+
+/* Títulos y textos */
+.card h2 {
+  margin: 0 0 5px 0;
+}
+
+.card p {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+/* Botón de enlace */
+.card a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 12px;
+  background-color: #8f004a;;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.card a:hover {
+  background-color: #8f004a;;
+}
+
+/* Sección de contacto */
+.contacto {
+  text-align: center;
+  padding: 50px 20px;
+}
+.intro {
+  text-align: center;
+  padding: 40px 20px; /* 20px de espacio a los lados */
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.titulo-proyectos {
+  text-align: center;
+  padding: 30px 20px; /* 20px de espacio a los lados */
+  color: #8f004a;
+}
+
+.titulo-proyectos h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.titulo-proyectos p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boton-final {
+  display: inline-block;
+  margin-top: 20px; /* espacio con respecto al contenido anterior */
+  padding: 12px 24px;
+  background-color: #8f004a;;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+.boton-final:hover {
+  background-color: #8f004a;;
+}
+
+
