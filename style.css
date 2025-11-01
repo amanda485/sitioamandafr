@@ -76,6 +76,8 @@ header nav a:hover {
 .card.proyecto2 { background-image: url("assets/img/miImagenEstatica (2).png"); }
 .card.proyecto3 { background-image: url("assets/img/miImagenEstatica (1).png"); }
 .card.proyecto4 { background-image: url("assets/img/miImagenEstatica (3).png"); }
+.card.proyecto5 { background-image: url("assets/img/tarea 5.png"); }
+.card.proyecto6 { background-image: url("assets/img/Diseño sin título (4).png"); }
 
 /* Títulos y textos */
 .card h2 {
